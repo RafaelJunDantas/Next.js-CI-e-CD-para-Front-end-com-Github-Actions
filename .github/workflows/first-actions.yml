@@ -9,6 +9,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    types: [ opened, synchronize ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,8 +20,14 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
-            - name: Teste exemplo
+
+            # echo example
+            - name: Run teste exemplo
               run: echo Teste exemplo
+
+            # list files example
+            - name: Run ls -la
+              run: ls -la
 
 #   # This workflow contains a single job called "build"
 #   build:
