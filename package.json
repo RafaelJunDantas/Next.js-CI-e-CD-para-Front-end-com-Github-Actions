@@ -15,9 +15,12 @@
     "build": "rm -rf out && next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "test:e2e:open": "cypress open",
+    "test:e2e": "cypress run --config-file=cypress.config.js"
   },
   "devDependencies": {
+    "cypress": "^13.11.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3"
   }

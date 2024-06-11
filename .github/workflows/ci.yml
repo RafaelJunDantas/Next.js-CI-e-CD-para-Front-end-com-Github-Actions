@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  # linter job
   linter:
     runs-on: ubuntu-latest
     steps:
@@ -22,3 +23,29 @@ jobs:
       # runs lint
       - name: Run lint
         run: yarn lint
+  # test e2e job
+  test_e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+
+      # config node to cache setup
+      - uses: actions/setup-node@v3
+        with:
+          node-version: v20.13.1
+          cache: 'yarn'
+
+      # https://docs.cypress.io/guides/continuous-integration/github-actions#Testing-in-Chrome-and-Firefox-with-Cypress-Docker-Images
+      # setup cypress
+      - name: Cypress
+        uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+
+      # runs install 
+      - name: Run installation
+        run: yarn install
+
+      # runs lint
+      - name: Run cypress test
+        run: yarn test:e2e
