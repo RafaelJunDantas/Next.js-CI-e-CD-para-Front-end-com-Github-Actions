@@ -27,10 +27,10 @@ jobs:
   test_e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-
+      - uses: actions/checkout@v4
+      
       # config node to cache setup
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: v20.13.1
           cache: 'yarn'
