@@ -13,5 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # runs install 
+      - name: Run installation
+        run: yarn install
+
+      # runs lint
       - name: Run lint
         run: yarn lint
