@@ -23,12 +23,13 @@ jobs:
       # runs lint
       - name: Run lint
         run: yarn lint
+        
   # test e2e job
   test_e2e:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       # config node to cache setup
       - uses: actions/setup-node@v4
         with:
@@ -41,11 +42,3 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-
-      # runs install 
-      - name: Run installation
-        run: yarn install
-
-      # runs lint
-      - name: Run cypress test
-        run: yarn test:e2e
