@@ -1,0 +1,19 @@
+{
+  "name": "next.js-ci-e-cd-para-front-end-com-github-actions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/RafaelJunDantas/Next.js-CI-e-CD-para-Front-end-com-Github-Actions.git",
+  "author": "Rafael Dantas",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "rm -rf out && next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}
